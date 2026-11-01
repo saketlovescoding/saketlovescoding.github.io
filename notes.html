@@ -18,24 +18,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><circle cx=%2750%27 cy=%2750%27 r=%2736%27 fill=%27%23B85C38%27/></svg>">
     <link rel="stylesheet" href="styles.css">
-    <script>(function(){var t=null;try{t=localStorage.getItem('theme')}catch(e){}if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){t='dark'}if(t){document.documentElement.setAttribute('data-theme',t)}})()</script>
+    <script data-page-mode="professional">(function(){var d=document.documentElement,s=document.currentScript,f=s&&s.getAttribute('data-page-mode'),m=f;try{m=f||localStorage.getItem('mode')}catch(e){}if(m!=='personal'){m='professional'}d.setAttribute('data-mode',m);if(f){try{localStorage.setItem('mode',f)}catch(e){}}var t=null;try{t=localStorage.getItem('theme')}catch(e){}if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){t='dark'}if(t){d.setAttribute('data-theme',t)}})()</script>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="nav-top">
                 <a href="index.html" class="logo">Saket Ramsinghani</a>
-                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
+                <div class="nav-controls">
+                    <div class="mode-switch" role="group" aria-label="Site mode">
+                        <button type="button" class="mode-btn" data-mode-btn="professional">Professional</button>
+                        <button type="button" class="mode-btn" data-mode-btn="personal">Personal</button>
+                    </div>
+                    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
+                </div>
             </div>
             <nav aria-label="Primary">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
+                <ul class="nav-links nav-links--professional">
+                    <li><a href="index.html">Work</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="blogs.html">Blog</a></li>
                     <li><a href="notes.html" class="active" aria-current="page">Notes</a></li>
+                    <li><a href="stats.html">Stats</a></li>
+                </ul>
+                <ul class="nav-links nav-links--personal">
+                    <li><a href="index.html">About</a></li>
                     <li><a href="thoughts.html">Thoughts</a></li>
                     <li><a href="reading.html">Reading</a></li>
-                    <li><a href="stats.html">Stats</a></li>
                 </ul>
             </nav>
         </div>
