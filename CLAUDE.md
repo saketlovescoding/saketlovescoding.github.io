@@ -19,7 +19,7 @@ Simple static personal website for Saket Ramsinghani, hosted on GitHub Pages at 
 ## Mode & Theme
 - `<html data-mode="professional|personal" data-theme="light|dark">`, both persisted in localStorage; the inline snippet in every page head applies them before paint
 - Mode-exclusive pages set `data-page-mode="..."` on that head script, which forces + persists the mode. Professional: projects, blogs, notes, stats. Personal: thoughts, reading. Switching to the other mode on such a page goes to the home page
-- `:root` = professional light (cool graphite; works without JS); `[data-mode="personal"]` (warm beige) and `[data-theme="dark"]` layer on top; accent `#B85C38` (`#D17A4F` dark) shared everywhere
+- Both modes share one cool graphite palette — mode changes only the nav and home content, not colors. `:root` = light, `[data-theme="dark"]` overrides; accent `#B85C38` (`#D17A4F` dark)
 
 ## Design System
 - Max content width: 680px (`--max-width: 720px` incl. padding)
