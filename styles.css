@@ -4,31 +4,49 @@
     padding: 0;
 }
 
-/* ---- Palette ----
-   One palette, light by default. [data-theme="dark"] is set by the
-   inline script in each page head (saved choice or OS preference). */
+/* ---- Palettes ----
+   Two axes: mode (professional = cool graphite, personal = warm beige)
+   and theme (light / dark). Base :root is professional light, so the
+   site works without JavaScript. The inline script in each page head
+   sets data-mode and data-theme before paint. */
 
 :root {
-    --bg: #FAF9F7;
+    --bg: #F6F6F4;
     --bg-elevated: #FFFFFF;
-    --text: #1C1917;
-    --text-muted: #6B6560;
+    --text: #1A1C1F;
+    --text-muted: #696D73;
     --accent: #B85C38;
     --accent-hover: #A04E2E;
-    --border: #E7E3DD;
+    --border: #E0E1DD;
     --max-width: 720px;
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'DM Sans', system-ui, sans-serif;
 }
 
+[data-mode="personal"] {
+    --bg: #F6F0E8;
+    --bg-elevated: #FDFBF8;
+    --text: #1C1917;
+    --text-muted: #736B64;
+    --border: #E5DDD3;
+}
+
 [data-theme="dark"] {
-    --bg: #191817;
-    --bg-elevated: #232120;
-    --text: #E7E3DD;
-    --text-muted: #9A938B;
+    --bg: #17191D;
+    --bg-elevated: #1F2228;
+    --text: #E2E4E8;
+    --text-muted: #8E939A;
     --accent: #D17A4F;
     --accent-hover: #E08B60;
-    --border: #33302D;
+    --border: #2C3036;
+}
+
+[data-theme="dark"][data-mode="personal"] {
+    --bg: #1C1A18;
+    --bg-elevated: #262321;
+    --text: #E7E2DA;
+    --text-muted: #9A928A;
+    --border: #35312E;
 }
 
 html {
@@ -105,6 +123,60 @@ nav {
     text-decoration: underline;
     text-decoration-color: var(--accent);
     text-underline-offset: 6px;
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+/* ---- Mode Switch ---- */
+
+.mode-switch {
+    display: inline-flex;
+    gap: 0.25rem;
+    padding: 3px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+}
+
+.mode-btn {
+    background: none;
+    border: none;
+    border-radius: 100px;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.mode-btn:hover {
+    color: var(--text);
+}
+
+.mode-btn[aria-pressed="true"] {
+    background: var(--text);
+    color: var(--bg);
+}
+
+/* ---- Mode-scoped nav and content ---- */
+
+.nav-links--personal,
+.mode-block--personal,
+[data-mode="personal"] .nav-links--professional,
+[data-mode="personal"] .mode-block--professional {
+    display: none;
+}
+
+[data-mode="personal"] .nav-links--personal {
+    display: flex;
+}
+
+[data-mode="personal"] .mode-block--personal {
+    display: block;
 }
 
 /* ---- Theme Toggle (hollow circle = light, filled = dark) ---- */
@@ -656,8 +728,17 @@ footer p {
         margin-bottom: 2.5rem;
     }
 
+    .nav-top {
+        flex-wrap: wrap;
+        gap: 0.75rem 1rem;
+    }
+
     .logo {
         font-size: 1.3rem;
+    }
+
+    .mode-btn {
+        padding: 0.25rem 0.65rem;
     }
 
     .nav-links {
