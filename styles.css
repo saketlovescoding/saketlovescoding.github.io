@@ -4,11 +4,10 @@
     padding: 0;
 }
 
-/* ---- Palettes ----
-   Two axes: mode (professional = cool graphite, personal = warm beige)
-   and theme (light / dark). Base :root is professional light, so the
-   site works without JavaScript. The inline script in each page head
-   sets data-mode and data-theme before paint. */
+/* ---- Palette ----
+   One cool graphite palette shared by both modes (mode only changes the
+   nav and home content). Light by default; [data-theme="dark"] is set by
+   the inline script in each page head before paint. */
 
 :root {
     --bg: #F6F6F4;
@@ -23,14 +22,6 @@
     --font-sans: 'DM Sans', system-ui, sans-serif;
 }
 
-[data-mode="personal"] {
-    --bg: #F6F0E8;
-    --bg-elevated: #FDFBF8;
-    --text: #1C1917;
-    --text-muted: #736B64;
-    --border: #E5DDD3;
-}
-
 [data-theme="dark"] {
     --bg: #17191D;
     --bg-elevated: #1F2228;
@@ -39,14 +30,6 @@
     --accent: #D17A4F;
     --accent-hover: #E08B60;
     --border: #2C3036;
-}
-
-[data-theme="dark"][data-mode="personal"] {
-    --bg: #1C1A18;
-    --bg-elevated: #262321;
-    --text: #E7E2DA;
-    --text-muted: #9A928A;
-    --border: #35312E;
 }
 
 html {
