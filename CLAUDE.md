@@ -1,11 +1,11 @@
 # saketramsinghani.life — Personal Website
 
 ## Project Overview
-Simple static personal website for Saket Ramsinghani, hosted on GitHub Pages with custom domain `saketramsinghani.life`. One plain design, one nav, light/dark toggle. Keep it minimal.
+Simple static personal website for Saket Ramsinghani, hosted on GitHub Pages at https://saketlovescoding.github.io/ (user site; repo renamed to `saketlovescoding.github.io`). No custom domain for now — the old `saketramsinghani.life` was dropped; a new domain may be added later via a `CNAME` file. One plain design, one nav, light/dark toggle. Keep it minimal.
 
 ## Tech Stack
 - Pure HTML + CSS + vanilla JS (no frameworks, no build tools)
-- GitHub Pages for hosting; custom domain via CNAME
+- GitHub Pages for hosting (no custom domain currently)
 
 ## File Structure
 - `index.html` — Home (intro + links)
@@ -14,7 +14,6 @@ Simple static personal website for Saket Ramsinghani, hosted on GitHub Pages wit
 - `styles.css` — single shared stylesheet
 - `js/site.js` — theme toggle + stats-page streak image tinting
 - `robots.txt`, `sitemap.xml` — crawler files
-- `CNAME` — GitHub Pages custom domain config
 
 ## Theme
 - `<html data-theme="light|dark">`, persisted in localStorage; inline snippet in every page head applies the saved theme or OS preference before paint
@@ -35,11 +34,12 @@ Simple static personal website for Saket Ramsinghani, hosted on GitHub Pages wit
 
 ## SEO / Crawling
 - Every page has `<meta name="description">`, `<link rel="canonical">` and Open Graph tags; home also has Person JSON-LD
+- Absolute URLs (canonical, og:url, JSON-LD, sitemap, robots `Sitemap:`) use `https://saketlovescoding.github.io/` — update them all together if the domain changes
 - When adding or removing a page: add it to the nav on every page AND to `sitemap.xml`
 - `robots.txt` allows all crawlers; a commented block lists AI-training bots to block if wanted
-- Seeing which bots crawl the site can't be done from static files (GitHub Pages exposes no logs); use Google Search Console / Bing Webmaster Tools, or Cloudflare in front of the domain
+- Seeing which bots crawl the site can't be done from static files (GitHub Pages exposes no logs); use Google Search Console / Bing Webmaster Tools; Cloudflare bot analytics needs an owned custom domain
 
 ## Git / Deployment
-- Remote: https://github.com/saketlovescoding/saketramsinghani.git
+- Remote: https://github.com/saketlovescoding/saketlovescoding.github.io.git (formerly `saketramsinghani`)
 - Branch: main; deploys automatically via GitHub Pages on push
-- Do NOT modify the CNAME file unless explicitly asked
+- Do NOT add or modify a CNAME file unless explicitly asked

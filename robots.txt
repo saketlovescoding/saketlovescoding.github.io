@@ -1,4 +1,4 @@
-# robots.txt for https://saketramsinghani.life
+# robots.txt for https://saketlovescoding.github.io
 # Everything here is public and may be crawled by search engines.
 
 User-agent: *
@@ -16,4 +16,4 @@ Allow: /
 # User-agent: meta-externalagent
 # Disallow: /
 
-Sitemap: https://saketramsinghani.life/sitemap.xml
+Sitemap: https://saketlovescoding.github.io/sitemap.xml
