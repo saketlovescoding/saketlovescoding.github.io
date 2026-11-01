@@ -14,6 +14,7 @@ Simple static personal website for Saket Ramsinghani, hosted on GitHub Pages at 
 - `styles.css` — single shared stylesheet
 - `js/site.js` — theme toggle, mode switch, stats-page streak image tinting
 - `robots.txt`, `sitemap.xml` — crawler files
+- `_config.yml` — GitHub Pages build config; excludes `CLAUDE.md` and `.claude/` from the published site
 
 ## Mode & Theme
 - `<html data-mode="professional|personal" data-theme="light|dark">`, both persisted in localStorage; the inline snippet in every page head applies them before paint

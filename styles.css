@@ -360,6 +360,26 @@ a:hover {
     margin: 0;
 }
 
+.card h3 a {
+    color: var(--text);
+}
+
+.card h3 a:hover {
+    color: var(--accent);
+}
+
+.card .card-links {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.more {
+    margin-top: 2rem;
+}
+
 .card .tech {
     display: flex;
     gap: 0.5rem;
