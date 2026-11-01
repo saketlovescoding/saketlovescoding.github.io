@@ -1,4 +1,4 @@
-# saketramsinghani.life — Personal Website
+# Saket Ramsinghani — Personal Website
 
 ## Project Overview
 Simple static personal website for Saket Ramsinghani, hosted on GitHub Pages at https://saketlovescoding.github.io/ (user site; repo renamed to `saketlovescoding.github.io`). No custom domain for now — the old `saketramsinghani.life` was dropped; a new domain may be added later via a `CNAME` file. One plain design, one nav, light/dark toggle. Keep it minimal.
