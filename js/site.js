@@ -13,7 +13,6 @@
             var theme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             root.setAttribute('data-theme', theme);
             store('theme', theme);
-            updateStreakTheme();
         });
     }
 
@@ -42,25 +41,8 @@
             }
             root.setAttribute('data-mode', mode);
             syncModeButtons();
-            updateStreakTheme();
         });
     });
 
-    /* Stats page: the streak SVG is drawn by a third party, so pass it our palette */
-    function updateStreakTheme() {
-        var img = document.getElementById('streak-img');
-        if (!img) return;
-        var dark = root.getAttribute('data-theme') === 'dark';
-        var bg = dark ? '1F2228' : 'FFFFFF';
-        var label = dark ? 'E2E4E8' : '1A1C1F';
-        var nums = dark ? '8E939A' : '696D73';
-        var ring = dark ? 'D17A4F' : 'B85C38';
-        img.src = 'https://github-readme-streak-stats.herokuapp.com/?user=saketlovescoding&hide_border=true' +
-            '&background=' + bg + '&ring=' + ring + '&fire=' + ring +
-            '&currStreakLabel=' + label + '&sideLabels=' + label + '&currStreakNum=' + label +
-            '&sideNums=' + nums + '&dates=' + nums;
-    }
-
     syncModeButtons();
-    updateStreakTheme();
 })();
